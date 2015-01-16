@@ -28,7 +28,7 @@
   <% else %>
   <ul>
     <% @contacts.each() do |contact| %>
-    <li><%= contact.given_name() %> <%= contact.middle_name() %> <%= contact.surname() %> <%= contact.nickname() %></li>
+    <li><%= contact.given_name() %> <%= contact.middle_name() %> <%= contact.surname() %> <% if contact.nickname != "" %>("<%= contact.nickname() %>")<% end %></li>
     <% end %>
   </ul>
   <% end %>
