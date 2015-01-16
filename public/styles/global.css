@@ -142,6 +142,64 @@ a {
   a:focus {
     border-color: #0e745c;
   }
+  a::before {
+  	display: inline-block;
+  	vertical-align: top;
+
+  	margin-right: .25rem;
+
+    color: #d0dad8;
+    font-family: FontAwesome;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 100;
+    /*
+     Subpixel-antialiasing blurs icon fonts.
+     http://noscope.com/2012/font-smoothing/
+     http://jaydenseric.com/blog/css-font-smoothing-for-firefox-mac
+     */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    -webkit-transition-duration: .1s;
+            transition-duration: .1s;
+  }
+    a:hover::before,
+    a:active::before,
+    a:focus::before {
+      color: #0e745c;
+    }
+    a[title="Permalink"]::before {
+      content: "\f0c1";
+      line-height: 1.625rem;
+    }
+    address a::before {
+      content: "\f041";
+    }
+    a[href^="mailto:"]::before {
+      content: "\f0e0";
+    }
+    a[href*="facebook.com"]::before {
+      content: "\f09a";
+    }
+    a[href*="twitter.com"]::before {
+      content: "\f099";
+    }
+    a[href*="instagram.com"]::before {
+      content: "\f16d";
+    }
+    a[href*="pinterest.com"]::before {
+      content: "\f0d2";
+    }
+    a[href*="plus.google.com"]::before {
+      content: "\f0d5";
+    }
+    a[href*="youtube.com"]::before {
+      content: "\f167";
+    }
+    a[href*="github.com"]::before {
+      content: "\f09b";
+    }
 
 header {
   -webkit-flex: 1 100%;
