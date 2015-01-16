@@ -87,6 +87,9 @@ textarea {
   outline: 0;
 }
 
+fieldset {
+  border: 0;
+}
 
 
 
