@@ -31,4 +31,14 @@ describe("Contact") do
     end
   end
 
+  describe(".find") do
+    it("returns a contact by its ID number") do
+      the_contact = Contact.new({:given_name => "David", :middle_name => "Anthony", :surname => "Zulaica", :nickname => ""})
+      the_contact.store()
+      other_contact = Contact.new({:given_name => "Michael", :middle_name => "Anthony", :surname => "Zulaica", :nickname => ""})
+      other_contact.store()
+      expect(Contact.find(the_contact.id())).to(eq(the_contact))
+    end
+  end
+
 end
