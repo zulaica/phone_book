@@ -2,7 +2,7 @@ class Contact
 
   @@contacts = []
 
-  attr_reader(:id, :given_name, :middle_name, :surname, :nickname)
+  attr_reader(:id, :given_name, :middle_name, :surname, :nickname, :numbers)
 
   define_method(:initialize) do |attributes|
     @given_name = attributes.fetch(:given_name)
@@ -18,6 +18,10 @@ class Contact
       @id = @@contacts.last().id().+(1)
     end
     @@contacts.push(self)
+  end
+
+  define_method(:add_numbers) do |the_numbers|
+    @numbers = the_numbers
   end
 
   define_singleton_method(:all) do
