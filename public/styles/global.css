@@ -92,6 +92,11 @@ fieldset {
   border: 0;
 }
 
+label {
+  display: none;
+}
+
+
 
 
 
@@ -236,10 +241,6 @@ main {
   flex: 1 100%;
 
   margin: 1rem auto;
-}
-
-label {
-  display: none;
 }
 
 input {
