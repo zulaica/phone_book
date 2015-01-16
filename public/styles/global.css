@@ -73,6 +73,7 @@ html {
 a {
   text-decoration: none;
   border-bottom: 1px dotted;
+  outline: 0;
 }
 
 button,
