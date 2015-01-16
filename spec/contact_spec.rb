@@ -11,4 +11,13 @@ describe("Contact") do
     end
   end
 
+  describe(".empty") do
+    it("removes all contact objects from the contacts array.") do
+      the_contact = Contact.new({:given_name => "David", :middle_name => "Anthony", :surname => "Zulaica", :nickname => ""})
+      the_contact.store()
+      Contact.empty()
+      expect(Contact.all()).to(eq([]))
+    end
+  end
+
 end
