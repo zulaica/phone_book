@@ -19,3 +19,8 @@ post("/") do
 
   redirect('/')
 end
+
+get("/contact/:id") do
+  @contact = Contact.find(params.fetch("id"))
+  erb(:contact)
+end
