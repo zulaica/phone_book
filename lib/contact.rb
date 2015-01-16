@@ -11,17 +11,14 @@ class Contact
     @nickname = attributes.fetch(:nickname)
   end
 
-  define_method(:store) do
+  define_method(:store) do |*the_numbers|
     if @@contacts == []
       @id = 0
     else
       @id = @@contacts.last().id().+(1)
     end
+    @numbers = *the_numbers
     @@contacts.push(self)
-  end
-
-  define_method(:add_numbers) do |the_numbers|
-    @numbers = the_numbers
   end
 
   define_singleton_method(:all) do
