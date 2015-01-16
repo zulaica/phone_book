@@ -2,6 +2,9 @@ require("rspec")
 require("contact")
 
 describe("Contact") do
+  before() do
+    Contact.empty()
+  end
 
   describe("#store") do
     it("creates a new contact object, saving it and its attributes into the contacts array.") do
