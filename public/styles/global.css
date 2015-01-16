@@ -244,6 +244,12 @@ main {
   margin: 1rem auto;
 }
 
+section + section {
+  margin-top: 1.5rem;
+
+  border-top: 1px solid #d0dad8;
+}
+
 fieldset {
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
