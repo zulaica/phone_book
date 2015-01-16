@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone Book</title>
+    <link href="//fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/styles/global.css" rel="stylesheet" />
+  </head>
+<!--
+    The `ontouchstart` attribute allows `:active` css states to be triggered
+    when links and buttons are touched. HTML5 syntax doesn't require attributes
+    to be assigned a value, so it works without `=""`. I need to research more
+    to determine if attaching it to `body` affects performance; putting it there
+    is admittedly a lazy "fix".
+-->
+  <body ontouchstart>
+    <header>
+      <h1>Phone Book</h1>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <p>Source available on <a href="//github.com/zulaica/phone_book" target="_blank">GitHub</a>.</p>
+    </footer>
+  </body>
+</html>
