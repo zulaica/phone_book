@@ -1,0 +1,7 @@
+<section>
+  <dl>
+    <dt><%= @contact.given_name() + " " + @contact.middle_name() + " " + @contact.surname() %><% if @contact.nickname != "" %> ("<%= @contact.nickname() %>")<% end %></dt>
+    <dd>(555) 555-5555</dd>
+  </dl>
+  <a href="/">Go back</a>
+</section>
