@@ -212,11 +212,13 @@ footer {
 }
 
 header {
+  height: 4rem;
+
   border-bottom: 1px solid #d0dad8;
 }
 
 h1 {
-  width: 100%;
+  margin: auto;
 
   font-family: Oswald, sans-serif;
   font-size: 2.5rem;
