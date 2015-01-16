@@ -108,7 +108,8 @@ label {
 html,
 body,
 header,
-footer {
+footer,
+fieldset {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex
