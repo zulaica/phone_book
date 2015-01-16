@@ -98,7 +98,8 @@ textarea {
 */
 html,
 body,
-header {
+header,
+footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex
@@ -146,7 +147,7 @@ a {
   	display: inline-block;
   	vertical-align: top;
 
-  	margin-right: .25rem;
+  	margin-right: .125em;
 
     color: #d0dad8;
     font-family: FontAwesome;
@@ -201,14 +202,17 @@ a {
       content: "\f09b";
     }
 
-header {
+header,
+footer {
   -webkit-flex: 1 100%;
   -ms-flex: 1;
   flex: 1 100%;
 
-  border-bottom: 1px solid #d0dad8;
-
   text-align: center;
+}
+
+header {
+  border-bottom: 1px solid #d0dad8;
 }
 
 h1 {
@@ -331,3 +335,29 @@ button {
     color: #fff;
     background-position: 0%;
   }
+
+footer {
+  height: 4rem;
+
+  border-top: 1px solid #d0dad8;
+}
+  footer p {
+    margin: auto;
+
+    font-family: Oswald, sans-serif;
+    font-size: .75rem;
+    font-style: italic;
+  }
+
+
+
+
+
+/*
+* --------------------------------------------------------------------------
+* Phone Book
+* --------------------------------------------------------------------------
+*/
+footer p a {
+  margin-left: .25em;
+}
