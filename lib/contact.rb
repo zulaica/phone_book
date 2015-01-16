@@ -19,4 +19,8 @@ class Contact
     @@contacts
   end
 
+  define_singleton_method(:empty) do
+    @@contacts = []
+  end
+
 end
