@@ -234,6 +234,10 @@ main {
   margin: 1rem auto;
 }
 
+label {
+  display: none;
+}
+
 input {
   padding: .25rem .5rem;
 
