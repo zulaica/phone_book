@@ -339,6 +339,8 @@ button {
   }
 
 [href="/"] {
+  float: left; /* Admittedly a hack; need to look into why `section` and this link are colliding. */
+
   padding: .5rem 1rem;
 
   background: #ddd;
