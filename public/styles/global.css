@@ -364,6 +364,7 @@ button {
   [href="/"]:focus {
     color: #fff;
     background-position: 0%;
+    border: 0;
   }
 
 footer {
