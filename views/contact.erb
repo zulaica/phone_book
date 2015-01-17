@@ -1,7 +1,27 @@
 <section>
+  <h2><%= @contact.given_name() + " " + @contact.middle_name() + " " + @contact.surname() %><% if @contact.nickname != "" %> ("<%= @contact.nickname() %>")<% end %></h2>
+  <% if @contact.numbers() != [] %>
   <dl>
-    <dt><%= @contact.given_name() + " " + @contact.middle_name() + " " + @contact.surname() %><% if @contact.nickname != "" %> ("<%= @contact.nickname() %>")<% end %></dt>
-    <dd>(555) 555-5555</dd>
+    <% if @contact.numbers().at(0).home_phone() != "" %>
+    <dt>Home</dt>
+    <dd><%= @contact.numbers().at(0).home_phone() %></dd>
+    <% end %>
+
+    <% if @contact.numbers().at(0).work_phone() != "" %>
+    <dt>Work</dt>
+    <dd><%= @contact.numbers().at(0).work_phone() %></dd>
+    <% end %>
+
+    <% if @contact.numbers().at(0).mobile_phone() != "" %>
+    <dt>Mobile</dt>
+    <dd><%= @contact.numbers().at(0).mobile_phone() %></dd>
+    <% end %>
+
+    <% if @contact.numbers().at(0).other_phone() != "" %>
+    <dt>Other</dt>
+    <dd><%= @contact.numbers().at(0).other_phone() %></dd>
+    <% end %>
   </dl>
+    <% end %>
   <a href="/">View all contacts</a>
 </section>
