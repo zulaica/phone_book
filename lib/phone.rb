@@ -1,6 +1,6 @@
 class Phone
 
-  @@phone_numbers = []
+  @@phone_numbers = nil
 
   attr_reader(:home_phone, :work_phone, :mobile_phone, :other_phone)
 
@@ -12,7 +12,7 @@ class Phone
   end
 
   define_method(:store) do
-    @@phone_numbers.push(self)
+    @@phone_numbers = self
   end
 
   define_singleton_method(:all) do
