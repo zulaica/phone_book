@@ -3,7 +3,6 @@ require("sinatra/reloader")
 also_reload("lib/**/*.rb")
 require("./lib/contact")
 require("./lib/phone")
-require("pry")
 
 get("/") do
   @contacts = Contact.all()
