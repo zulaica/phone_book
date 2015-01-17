@@ -343,6 +343,8 @@ button {
 
   padding: .5rem 1rem;
 
+  border: 0;
+
   background: #ddd;
   background-image: -webkit-linear-gradient(left, #888 0%, #888 50%, transparent 50%, transparent 100%);
   background-image: linear-gradient(to right, #888 0%, #888 50%, transparent 50%, transparent 100%);
@@ -366,7 +368,6 @@ button {
   [href="/"]:focus {
     color: #fff;
     background-position: 0%;
-    border: 0;
   }
 
 footer {
