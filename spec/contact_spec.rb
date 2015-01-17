@@ -23,13 +23,12 @@ describe("Contact") do
     end
   end
 
-  describe("#add_numbers") do
-    it("adds the supplied phone numbers to the contact.") do
+  describe("#store") do
+    it("now adds the optionally supplied phone numbers to the contact.") do
       the_contact = Contact.new({:given_name => "David", :middle_name => "Anthony", :surname => "Zulaica", :nickname => ""})
-      the_contact.store()
       the_numbers = Phone.new({:home_phone => "(555) 555-5555", :work_phone => "(555) 555-5555", :mobile_phone => "(555) 555-5555", :other_phone => "(555) 555-5555"})
-      the_contact.add_numbers(the_numbers)
-      expect(the_contact.numbers()).to(eq(the_numbers))
+      the_contact.store(the_numbers)
+      expect(the_contact.numbers()).to(eq([the_numbers]))
     end
   end
 
