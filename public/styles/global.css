@@ -359,11 +359,6 @@ button {
   -webkit-transition-duration: .1s;
   transition-duration: .1s
 }
-  [href="/"]::before {
-    content: "\261c\0020\0020";
-    font-size: 1.5em;
-    vertical-align: text-bottom;
-  }
   [href="/"]:hover,
   [href="/"]:active,
   [href="/"]:focus {
