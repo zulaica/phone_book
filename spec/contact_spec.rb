@@ -23,15 +23,6 @@ describe("Contact") do
     end
   end
 
-  describe("#store") do
-    it("now adds the optionally supplied phone numbers to the contact.") do
-      the_contact = Contact.new({:given_name => "David", :middle_name => "Anthony", :surname => "Zulaica", :nickname => ""})
-      the_numbers = Phone.new({:home_phone => "(555) 555-5555", :work_phone => "(555) 555-5555", :mobile_phone => "(555) 555-5555", :other_phone => "(555) 555-5555"})
-      the_contact.store(the_numbers)
-      expect(the_contact.numbers()).to(eq([the_numbers]))
-    end
-  end
-
   describe(".empty") do
     it("removes all contact objects from the contacts array.") do
       the_contact = Contact.new({:given_name => "David", :middle_name => "Anthony", :surname => "Zulaica", :nickname => ""})
