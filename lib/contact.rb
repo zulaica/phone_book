@@ -2,7 +2,7 @@ class Contact
 
   @@contacts = []
 
-  attr_reader(:id, :given_name, :middle_name, :surname, :nickname, :numbers)
+  attr_reader(:id, :given_name, :middle_name, :surname, :nickname)
 
   define_method(:initialize) do |attributes|
     @given_name = attributes.fetch(:given_name)
@@ -11,13 +11,12 @@ class Contact
     @nickname = attributes.fetch(:nickname)
   end
 
-  define_method(:store) do |*the_numbers|
+  define_method(:store) do
     if @@contacts == []
       @id = 0
     else
       @id = @@contacts.last().id().+(1)
     end
-    @numbers = *the_numbers
     @@contacts.push(self)
   end
 

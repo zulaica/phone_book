@@ -1,22 +1,35 @@
 class Phone
 
-  @@phone_numbers = nil
+  @@phone_numbers = []
 
-  attr_reader(:home_phone, :work_phone, :mobile_phone, :other_phone)
+  attr_reader(:type, :number, :contact_id)
 
   define_method(:initialize) do |attributes|
-    @home_phone = attributes.fetch(:home_phone)
-    @work_phone = attributes.fetch(:work_phone)
-    @mobile_phone = attributes.fetch(:mobile_phone)
-    @other_phone = attributes.fetch(:other_phone)
+    @type = attributes.fetch(:type)
+    @number = attributes.fetch(:number)
+    @contact_id = attributes.fetch(:contact_id)
   end
 
   define_method(:store) do
-    @@phone_numbers = self
+    @@phone_numbers.push(self)
   end
 
   define_singleton_method(:all) do
     @@phone_numbers
+  end
+
+  define_singleton_method(:empty) do
+    @@phone_numbers = []
+  end
+
+  define_singleton_method(:find) do |identification|
+    found_numbers = []
+    @@phone_numbers.each() do |phone_number|
+      if phone_number.contact_id().eql?(identification.to_i())
+        found_numbers.push(phone_number)
+      end
+    end
+    found_numbers
   end
 
 end
