@@ -1,27 +1,14 @@
 <section>
   <h2><%= @contact.given_name() + " " + @contact.middle_name() + " " + @contact.surname() %><% if @contact.nickname != "" %> ("<%= @contact.nickname() %>")<% end %></h2>
-  <% if @contact.numbers() != [] %>
+  <% if @numbers.any?() %>
   <dl>
-    <% if @contact.numbers().at(0).home_phone() != "" %>
-    <dt>Home</dt>
-    <dd><%= @contact.numbers().at(0).home_phone() %></dd>
-    <% end %>
-
-    <% if @contact.numbers().at(0).work_phone() != "" %>
-    <dt>Work</dt>
-    <dd><%= @contact.numbers().at(0).work_phone() %></dd>
-    <% end %>
-
-    <% if @contact.numbers().at(0).mobile_phone() != "" %>
-    <dt>Mobile</dt>
-    <dd><%= @contact.numbers().at(0).mobile_phone() %></dd>
-    <% end %>
-
-    <% if @contact.numbers().at(0).other_phone() != "" %>
-    <dt>Other</dt>
-    <dd><%= @contact.numbers().at(0).other_phone() %></dd>
+    <% @numbers.each() do |number| %>
+    <dt><%= number.type() %></dt>
+    <dd><%= number.number() %></dd>
     <% end %>
   </dl>
+  <% else %>
+  <p>There are no phone numbers for this contact.</p>
   <% end %>
 </section>
 <a href="/">View all contacts</a>

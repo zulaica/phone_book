@@ -1,4 +1,17 @@
 <section>
+  <h2>Your contacts</h2>
+  <% if @contacts == [] %>
+    <p>Your phone book is empty. Add a contact using the form below.</p>
+  <% else %>
+  <ul>
+    <% @contacts.each() do |contact| %>
+    <li><a href="/contact/<%= contact.id() %>"><%= contact.given_name() + " " + contact.middle_name() + " " + contact.surname() %><% if contact.nickname != "" %> ("<%= contact.nickname() %>")<% end %></a></li>
+    <% end %>
+  </ul>
+  <% end %>
+</section>
+
+<section>
   <form action="/" method="post">
     <fieldset>
       <legend>Add a contact to your phone book:</legend>
@@ -35,17 +48,4 @@
     <button type="submit">Add contact</button>
     <button type="reset">Clear form</button>
   </form>
-</section>
-
-<section>
-  <h2>Your contacts</h2>
-  <% if @contacts == [] %>
-    <p>Your phone book is empty. Add a contact using the form above.</p>
-  <% else %>
-  <ul>
-    <% @contacts.each() do |contact| %>
-    <li><a href="/contact/<%= contact.id() %>"><%= contact.given_name() + " " + contact.middle_name() + " " + contact.surname() %><% if contact.nickname != "" %> ("<%= contact.nickname() %>")<% end %></a></li>
-    <% end %>
-  </ul>
-  <% end %>
 </section>

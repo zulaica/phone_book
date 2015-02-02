@@ -21,13 +21,30 @@ post("/") do
   @other_phone = params.fetch("other_phone")
 
   the_contact = Contact.new({:given_name => @given_name, :middle_name => @middle_name, :surname => @surname, :nickname => @nickname})
-  the_numbers = Phone.new({:home_phone => @home_phone, :work_phone => @work_phone, :mobile_phone => @mobile_phone, :other_phone => @other_phone})
-  the_contact.store(the_numbers)
-
+  the_contact.store()
+  @contact_id = the_contact.id().to_i()
+  if @home_phone != ""
+    home_phone = Phone.new({:type => "Home", :number => @home_phone, :contact_id => @contact_id})
+    home_phone.store()
+  end
+  if @work_phone != ""
+    work_phone = Phone.new({:type => "Work", :number => @work_phone, :contact_id => @contact_id})
+    work_phone.store()
+  end
+  if @mobile_phone != ""
+    mobile_phone = Phone.new({:type => "Mobile", :number => @mobile_phone, :contact_id => @contact_id})
+    mobile_phone.store()
+  end
+  if @other_phone != ""
+    other_phone = Phone.new({:type => "Other", :number => @other_phone, :contact_id => @contact_id})
+    other_phone.store()
+  end
+  
   redirect('/')
 end
 
 get("/contact/:id") do
   @contact = Contact.find(params.fetch("id"))
+  @numbers = Phone.find(params.fetch("id"))
   erb(:contact)
 end
